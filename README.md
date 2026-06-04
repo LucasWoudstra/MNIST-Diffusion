@@ -91,3 +91,10 @@ Each folder will contain:
 - **Quantitative Metrics (`intermediate_fid_scores.csv`)**
   - *Intermediate Validation*: Tracks progressive model performance using a fast 1,000-sample Fréchet Inception Distance (FID) score at evaluation intervals.
   - *Final Benchmarking*: Logs a rigorous, publication-ready 10,000-sample FID score calculated immediately after the final epoch completes.
+
+## Acknowledgements
+
+The core architecture, including the base U-Net implementation (`unet.py`) and standard DDPM variance schedules, is based on the original repository by bot66 (https://github.com/bot66/MNISTDiffusion/tree/main). 
+
+Modifications were introduced in `model_experimental.py` to implement biased timestep sampling configurations, and in `train_mnist_new.py` to support automated multi-experiment orchestration and comprehensive FID evaluation.
+
