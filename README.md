@@ -1,6 +1,6 @@
 # MNIST Diffusion: Timestep Sampling Bias Experiments
 
-This repository contains the source code and experimental pipeline for training and evaluating a Denoising Diffusion Probabilistic Model (DDPM) on the MNIST dataset. The project explores the performance impact of shifting the training focus toward different noise levels by applying custom non-uniform probability distributions during the timestep ($t$) sampling phase.
+This repository contains the source code and experimental pipeline for training and evaluating a Denoising Diffusion Probabilistic Model (DDPM) on the MNIST dataset, the link to the original repository is https://github.com/bot66/MNISTDiffusion, the code in this repository is largely copied from there.. The project explores the performance impact of shifting the training focus toward different noise levels by applying custom non-uniform probability distributions during the timestep ($t$) sampling phase.
 
 The core implementation modifications reside across two principal modules:
 
