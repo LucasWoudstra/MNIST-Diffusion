@@ -96,21 +96,16 @@ class MNISTDiffusion(nn.Module):
         return x_t
 
 
-
     def _cosine_variance_schedule(self,timesteps,epsilon= 0.008):
         steps=torch.linspace(0,timesteps,steps=timesteps+1,dtype=torch.float32)
         f_t=torch.cos(((steps/timesteps+epsilon)/(1.0+epsilon))*math.pi*0.5)**2
         betas=torch.clip(1.0-f_t[1:]/f_t[:timesteps],0.0,0.999)
-
         return betas
         
-    ###########################################################################################################################################################
-    # --- Optional Linear (change _cosine_variance_schedule to _linear_variance_schedule in __init__ if you want to use this instead) --- 
-    ###########################################################################################################################################################
+   
     def _linear_variance_schedule(self,timesteps,start=0.0001,end=0.02):
         return torch.linspace(start,end,timesteps)
-
-    ###########################################################################################################################################################
+        
 
     def _forward_diffusion(self,x_0,t,noise):
         assert x_0.shape==noise.shape
